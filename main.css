@@ -131,6 +131,55 @@ nav a:hover::after {
     align-items: center;
 }
 
+/* Pagina nosotros */
+
+.main-nosotros {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.selectors-nosotros{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    position: relative;
+    margin-bottom: 75px;
+}
+
+#border-right{
+    border-right: solid 2px black;
+    position: absolute;
+    height: 110%;
+    width: 100%;
+    margin-top: 75px;
+}
+
+.selectors-nosotros a{
+    margin-left: 40px;
+}
+
+.section-nosotros{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-nosotros h2{
+    margin-left: 25px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.text-nosotros p{
+    margin-top: 5px;
+    margin-left: 25px;
+}
+
 /**  Banner **/
 .banner {
     width: 100%;
@@ -168,12 +217,8 @@ nav a:hover::after {
     padding: 10px;
     /* height: 150px; */
     width: 75%;
-    /*opcion 1*/
     border-bottom: 1px solid;
     margin-block: 6px;
-    /*opcion 2*/
-    /*border-bottom-right-radius: 5px;
-    box-shadow: 5px 5px 5px 0px var(--bg-dark);*/
 }
 
 .main-inicio > .section-inicio:last-child {

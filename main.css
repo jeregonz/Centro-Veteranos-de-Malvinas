@@ -163,17 +163,24 @@ main {
 
 .section-inicio {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
     padding: 10px;
-    /* height: 150px; */
     width: 75%;
     margin-block: 6px;
-    justify-content: center;
+}
+
+.section-inicio h2{
+    padding-left: 5px;
+    text-decoration: underline;
 }
 
 .section-inicio div {
     max-width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 .section-inicio img {

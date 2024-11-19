@@ -321,17 +321,18 @@ footer img {
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding-inline: 50px;
+    padding-inline: 40px;
     justify-content: space-evenly;
 }
 
 .selectors{
     width: 15%;
-    margin-block: 10px;
+    margin-block: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding-right: 10px;
+    margin-right: 10px;
     position: relative;
 }
 
@@ -340,7 +341,7 @@ footer img {
     position: absolute;
     width: 2px;
     height: -webkit-fill-available;
-    right: 0;
+    right: -20px;
     background-color: var(--bg-dark);
 }
 
@@ -349,18 +350,37 @@ footer img {
 }
 
 .section-secundaria{
-    width: 70%;
+    width: 75%;
     display: flex;
     flex-direction: column;
+    margin-block: 20px;
+    padding-inline: 15px;
+    gap: 32px;
 }
 
 .section-secundaria h2{
-    margin-left: 25px;
-    margin-top: 25px;
     margin-bottom: 10px;
 }
 
 .text-secundaria p{
-    margin-top: 5px;
-    margin-left: 25px;
+    margin-bottom: 5px;
+}
+
+/* Pagina Fotos */
+
+.fotos-album {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.fotos-album img {
+    height: 120px;
+    width: 120px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+img:hover {
+    border: 1px solid var(--bg-dark);
 }

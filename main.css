@@ -233,6 +233,12 @@ footer img {
     z-index: 1000;
 }
 
+.overlay p{
+    display: none;
+    padding-top: 10px;
+    color: red;
+}
+
 .popup {
     background-color: #ffffff;
     width: 350px;

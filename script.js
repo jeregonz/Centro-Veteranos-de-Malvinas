@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const popupHTML = `
     <div class="overlay">
         <div class="popup">
+            <button class="close-pop-up">X</button>
             <h2>Ingresar al sistema</h2>
             
             <label for="username">Usuario</label>
@@ -15,14 +16,20 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 `;
-
     let login = document.getElementById('btn-acceder');
+
     login.addEventListener('click', function () {
         // Insertar el popup en el body
         document.body.insertAdjacentHTML('beforeend', popupHTML);
 
         // Manejar el cierre del popup
         let ingresar = document.getElementById('btn-log-in');
+        let closePopUp = document.querySelector(".close-pop-up"); 
+
+        closePopUp.addEventListener('click', function(){
+            document.querySelector('.overlay').remove();
+        })
+
         ingresar.addEventListener('click', function () {
             let usuario = document.querySelector("#username");
             let contraseña = document.querySelector("#password");

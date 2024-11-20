@@ -1,5 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const popupHTML = `
+
+    let botonAcceder = document.getElementById('btn-acceder');
+    let botonSalir = document.getElementById('btn-salir');
+    let botonEditar = document.querySelector('.btn-editar');
+    let botonSubir = document.querySelector(".btn-subir");
+    let subirFoto = document.querySelector("#subir-foto");
+
+    subirFoto.addEventListener('click', showPopup)
+
+    botonSubir.addEventListener('click', goToTop);
+
+    function goToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    window.onscroll = function () {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            botonSubir.style.display = "block";
+        } else {
+            botonSubir.style.display = "none";
+        }
+    };
+
+    botonAcceder.addEventListener('click', function () {
+        const popupHTML = `
     <div class="overlay">
         <div class="popup">
             <button class="close-pop-up">
@@ -18,30 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 `;
-    let botonAcceder = document.getElementById('btn-acceder');
-    let botonSalir = document.getElementById('btn-salir');
-    let botonEditar = document.querySelector('.btn-editar');
-    let botonSubir = document.querySelector(".btn-subir");
-
-    botonSubir.addEventListener('click', goToTop);
-
-    window.onscroll = function() {
-        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-            botonSubir.style.display = "block";
-        } else {
-            botonSubir.style.display = "none";
-        }
-    };
-
-    botonAcceder.addEventListener('click', function () {
         // Insertar el popup en el body
         document.body.insertAdjacentHTML('beforeend', popupHTML);
 
         // Manejar el cierre del popup
         let ingresar = document.getElementById('btn-log-in');
-        let closePopUp = document.querySelector(".close-pop-up"); 
+        let closePopUp = document.querySelector(".close-pop-up");
 
-        closePopUp.addEventListener('click', function(){
+        closePopUp.addEventListener('click', function () {
             document.querySelector('.overlay').remove();
         })
 
@@ -50,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             let contraseña = document.querySelector("#password");
             let errorHandler = document.querySelector("#error");
 
-            if (usuario.value == "admin" && contraseña.value == "admin"){
+            if (usuario.value == "admin" && contraseña.value == "admin") {
                 console.log("usuario logueado");
                 errorHandler.style.display = 'none';
                 loginUser()
@@ -65,12 +73,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    botonSalir.addEventListener('click', ()=> {
+    botonSalir.addEventListener('click', () => {
         logoutUser()
         updateUI()
     })
 
-    updateUI()
+    updateUI();
 
     function loginUser() {
         localStorage.setItem('isLoggedIn', 'true')
@@ -90,18 +98,49 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isLoggedIn) {
             botonAcceder.style.display = 'none'
             botonSalir.style.display = 'block'
-            if(botonEditar!=null)
+            if (botonEditar != null)
                 botonEditar.style.display = 'block'
 
         } else {
             botonAcceder.style.display = 'block'
             botonSalir.style.display = 'none'
-            if(botonEditar!=null)
+            if (botonEditar != null)
                 botonEditar.style.display = 'none'
         }
     }
 
-    function goToTop(){
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function showPopup() {
+        const POPUPIMG =
+            `<div class="popup-imagen">
+                <div class="popup-imagen-content">
+                    <span class="close-imagen-btn">&times;</span>
+                    <h2>Sumá tu foto</h2>
+                    <form>
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name">
+    
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email">
+    
+                        <label for="description">Descripción (hasta 250 caracteres)</label>
+                        <textarea id="description" name="description" maxlength="250"></textarea>
+    
+                        <label for="file">Seleccionar archivo</label>
+                        <input type="file" id="file" name="file" accept=".png, .jpg, .jpeg, .gif">
+    
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>
+            </div>`;
+
+            document.body.insertAdjacentHTML('beforeend', POPUPIMG);
+
+            let closePopUpImg = document.querySelector(".close-imagen-btn");
+
+        closePopUpImg.addEventListener('click', function () {
+            document.querySelector('.popup-imagen').remove();
+        })
     }
+
+
 });

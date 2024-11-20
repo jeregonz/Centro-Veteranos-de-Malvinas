@@ -428,3 +428,78 @@ footer img {
 .fotos-album img:hover {
     border: 1px solid var(--bg-dark);
 }
+
+/* Formulario subida imagen */
+
+.popup-imagen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-imagen-content {
+    position: relative;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+}
+
+.popup-imagen-content h2 {
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+}
+
+.popup-imagen-content label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.popup-imagen-content .input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.popup-imagen-content .submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+.popup-imagen-content .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.close-imagen-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-imagen-btn:hover {
+    color: #000;
+}

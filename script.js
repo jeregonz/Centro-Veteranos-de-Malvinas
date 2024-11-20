@@ -2,7 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const popupHTML = `
     <div class="overlay">
         <div class="popup">
-            <button class="close-pop-up">X</button>
+            <button class="close-pop-up">
+                <i class="fa-solid fa-x"></i>
+            </button>
             <h2>Ingresar al sistema</h2>
             
             <label for="username">Usuario</label>

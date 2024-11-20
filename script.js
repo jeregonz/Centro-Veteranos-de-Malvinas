@@ -21,6 +21,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let botonAcceder = document.getElementById('btn-acceder');
     let botonSalir = document.getElementById('btn-salir');
     let botonEditar = document.querySelector('.btn-editar');
+    let botonSubir = document.querySelector(".btn-subir");
+
+    botonSubir.addEventListener('click', goToTop);
+
+    window.onscroll = function() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            botonSubir.style.display = "block";
+        } else {
+            botonSubir.style.display = "none";
+        }
+    };
 
     botonAcceder.addEventListener('click', function () {
         // Insertar el popup en el body
@@ -88,5 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
             if(botonEditar!=null)
                 botonEditar.style.display = 'none'
         }
+    }
+
+    function goToTop(){
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });

@@ -235,7 +235,7 @@ footer img {
 }
 
 /** Ventana de logueo **/
-.overlay {
+.overlay, .popup-imagen {
     position: fixed;
     top: 0;
     left: 0;
@@ -255,7 +255,7 @@ footer img {
 }
 
 .popup {
-    background-color: #ffffff;
+    background-color: var(--bg-light);
     width: 350px;
     height: 380px;
     padding: 20px;
@@ -294,6 +294,7 @@ footer img {
 
 .popup input {
     color: var(--text-color);
+    background-color: inherit;
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -431,22 +432,9 @@ footer img {
 
 /* Formulario subida imagen */
 
-.popup-imagen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
 .popup-imagen-content {
     position: relative;
-    background-color: #fff;
+    background-color: var(--bg-light);
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -456,14 +444,12 @@ footer img {
 
 .popup-imagen-content h2 {
     margin-top: 0;
-    color: #333;
     text-align: center;
 }
 
 .popup-imagen-content label {
     display: block;
     margin: 10px 0 5px;
-    color: #333;
 }
 
 .popup-imagen-content .input-field {
@@ -475,31 +461,50 @@ footer img {
     box-sizing: border-box;
 }
 
-.popup-imagen-content .submit-btn {
-    background-color: #007bff;
-    color: white;
+.popup-imagen-content button[type="submit"] {
     padding: 10px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
     width: 100%;
     text-align: center;
-    font-size: 16px;
+    margin-top: 20px;
+    padding-block: 12px;
+    padding-inline: 18px;
+    background-color: var(--bg-dark);
+    color: var(--text-light-color);
+    border-radius: 4px;
 }
 
-.popup-imagen-content .submit-btn:hover {
-    background-color: #0056b3;
+.popup-imagen-content input {
+    color: var(--text-color);
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: inherit;
+}
+
+.popup-imagen-content textarea {
+    width: 100%;
+    height: 4rem;
+    background-color: var(--bg-light);
 }
 
 .close-imagen-btn {
+    font-weight: 900;
     position: absolute;
-    top: 15px;
-    right: 15px;
-    font-size: 20px;
+    top: 0;
+    right: 0;
+    padding-block: 8px;
+    padding-inline: 14px;
+    background-color: var(--bg-dark);
+    color: var(--text-light-color);
+    border: none;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius: 4px;
     cursor: pointer;
-    color: #aaa;
 }
 
 .close-imagen-btn:hover {
-    color: #000;
+    background-color: #1e455b;
 }

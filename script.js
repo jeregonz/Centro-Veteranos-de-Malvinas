@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const POPUPIMG =
             `<div class="popup-imagen">
                 <div class="popup-imagen-content">
-                    <span class="close-imagen-btn">&times;</span>
+                    <span class="close-imagen-btn"><i class="fa-solid fa-x"></i></span>
                     <h2>Sumá tu foto</h2>
                     <form>
                         <label for="name">Nombre</label>

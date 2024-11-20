@@ -18,9 +18,11 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     </div>
 `;
-    let login = document.getElementById('btn-acceder');
+    let botonAcceder = document.getElementById('btn-acceder');
+    let botonSalir = document.getElementById('btn-salir');
+    let botonEditar = document.querySelector('.btn-editar');
 
-    login.addEventListener('click', function () {
+    botonAcceder.addEventListener('click', function () {
         // Insertar el popup en el body
         document.body.insertAdjacentHTML('beforeend', popupHTML);
 
@@ -40,6 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (usuario.value == "admin" && contraseña.value == "admin"){
                 console.log("usuario logueado");
                 errorHandler.style.display = 'none';
+                loginUser()
+                document.querySelector('.overlay').remove();
             }
             else {
                 usuario.value = "";
@@ -50,5 +54,39 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    botonSalir.addEventListener('click', ()=> {
+        logoutUser()
+        updateUI()
+    })
 
+    updateUI()
+
+    function loginUser() {
+        localStorage.setItem('isLoggedIn', 'true')
+        console.log('loguinUser')
+        updateUI()
+    }
+
+    function logoutUser() {
+        localStorage.removeItem('isLoggedIn')
+        console.log('Sesión cerrada')
+        updateUI()
+    }
+
+    function updateUI() {
+        const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true'
+
+        if (isLoggedIn) {
+            botonAcceder.style.display = 'none'
+            botonSalir.style.display = 'block'
+            if(botonEditar!=null)
+                botonEditar.style.display = 'block'
+
+        } else {
+            botonAcceder.style.display = 'block'
+            botonSalir.style.display = 'none'
+            if(botonEditar!=null)
+                botonEditar.style.display = 'none'
+        }
+    }
 });

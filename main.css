@@ -50,7 +50,7 @@ header h2 {
     font-size: 18px;
 }
 
-#btn-acceder {
+#btn-salir, #btn-acceder {
     align-self: flex-start;
     color: var(--text-color);
     background-color: var(--bg-light);
@@ -61,12 +61,15 @@ header h2 {
     font-weight: 500;
     border: 0;
 }
-#btn-acceder:hover{
+#btn-salir:hover, #btn-acceder:hover{
     background-color: #d4f3f9;
 }
-#btn-acceder:active{
+#btn-salir:active, #btn-acceder:active{
     background-color: var(--bg-dark);
     color: var(--text-light-color);
+}
+#btn-salir {
+    display: none;
 }
 
 .navbar {
@@ -350,6 +353,18 @@ footer img {
     background-color: var(--bg-dark);
 }
 
+.btn-editar {
+    background-color: var(--text-color);
+    color: var(--bg-light);
+    padding-inline: 8px;
+    padding-block: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    border: 0;
+    display: none;
+}
+
 .section-secundaria{
     width: 65%;
     display: flex;
@@ -386,6 +401,6 @@ footer img {
     cursor: pointer;
 }
 
-img:hover {
+.fotos-album img:hover {
     border: 1px solid var(--bg-dark);
 }

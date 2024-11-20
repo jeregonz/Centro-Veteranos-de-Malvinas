@@ -6,10 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
     let botonSubir = document.querySelector(".btn-subir");
     let subirFoto = document.querySelector("#subir-foto");
 
-    subirFoto.addEventListener('click', showPopup)
+    if(subirFoto != null){
+        subirFoto.addEventListener('click', showPopup)
+    }
 
-    botonSubir.addEventListener('click', goToTop);
-
+    if(botonSubir != null){
+        botonSubir.addEventListener('click', goToTop);
+    }
+    
     function goToTop() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }

@@ -141,8 +141,10 @@ main {
 
 .main-inicio {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
+    padding-inline: 55px;
 }
 
 /**  Banner **/
@@ -171,30 +173,35 @@ main {
 .section-inicio {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
     padding: 10px;
-    width: 75%;
+    width: 50%;
+    height: 380px;
     margin-block: 6px;
 }
 
 .section-inicio h2{
-    padding-left: 5px;
     text-decoration: underline;
 }
 
 .section-inicio div {
     max-width: 75%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
 }
 
 .section-inicio img {
-    width: 200px;
+    width: 325px;
     height: 200px;
     border: 1px solid black;
     border-radius: 4px;
+}
+
+.section-inicio p {
+    text-align: center;
 }
 
 footer {

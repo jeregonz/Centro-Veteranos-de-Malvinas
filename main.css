@@ -219,7 +219,7 @@ main {
     padding: 10px;
     width: 50%;
     height: 380px;
-    margin-block: 6px;
+    margin-block: 24px;
 }
 
 .section-inicio h2 {
@@ -231,7 +231,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
 }
 
 .section-inicio img {
@@ -338,13 +337,12 @@ footer img {
     background-color: inherit;
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--text-color);
     border-radius: 4px;
 }
 
 .popup input:focus {
-    outline: 0;
-    border-color: var(--bg-dark)
+    outline: 1px solid var(--text-color);
 }
 
 .popup a {
@@ -529,7 +527,7 @@ footer img {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #1b99bf;
     border-radius: 5px;
     box-sizing: border-box;
 }
@@ -552,15 +550,26 @@ footer img {
     color: var(--text-color);
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--text-color);
     border-radius: 4px;
     background-color: inherit;
+}
+
+.popup-imagen-content input:focus {
+    outline: 1px solid var(--text-color);
 }
 
 .popup-imagen-content textarea {
     width: 100%;
     height: 4rem;
     background-color: var(--bg-light);
+    border: 1px solid var(--text-color);
+    border-radius: 4px;
+}
+
+.popup-imagen-content textarea:focus {
+    outline: 1px solid var(--text-color);
+    border: 1px solid var(--text-color);
 }
 
 .close-imagen-btn {
@@ -580,4 +589,80 @@ footer img {
 
 .close-imagen-btn:hover {
     background-color: #1e455b;
+}
+
+#menu-hamburguesa {
+    display: none;
+}
+
+/* Inicio responsive */
+@media (width < 600px) {
+    #menu-hamburguesa {
+        display: block;
+        width: 46px;
+        height: 46px;
+        position: absolute;
+        right: 20px;
+        top: 80px;
+        font-size: 40px;
+        text-align: center;
+        color: var(--bg-dark);
+        background-color: var(--bg-light);
+        border: 0;
+        border-radius: 4px;
+    }
+
+    nav.show {
+        display: block;
+        padding-top: 24px;
+        height: 100em;
+    }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        width: 100%;
+        top: 150px;
+        height: 100%;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        width: 100%;
+        font-weight: 300;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .main-inicio {
+        padding-inline: revert;
+    }
+
+    .section-inicio {
+        flex-direction: column;
+        padding: revert;
+        width: revert;
+        height: revert;
+        margin-block: 24px;
+    }
+
+    .marquee span {
+        font-size: revert;
+    }
+
+    footer {
+        padding: 20px;
+        gap: 16px;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer-info {
+        place-items: center;
+    }
 }

@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function () {
             `<div class="popup-imagen">
                 <div class="popup-imagen-content">
                     <span class="close-imagen-btn"><i class="fa-solid fa-x"></i></span>
-                    <h2>Sumá tu foto</h2>
-                    <form>
+                    <form class="form-fotos">
+                        <h2>Sumá tu foto</h2>
                         <label for="name">Nombre</label>
                         <input type="text" id="name" name="name">
     

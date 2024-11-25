@@ -183,10 +183,12 @@ main {
 
 .main-inicio {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    padding-inline: 55px;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    /* padding-inline: 55px; */
+    overflow: hidden; /* Oculta los elementos fuera del viewport */
+    scroll-snap-type: x mandatory; /* Habilita el "snap" al deslizar */
+    position: relative;
 }
 
 /**  Banner **/
@@ -217,12 +219,42 @@ main {
     padding: 2%;
     width: 100%;
     height: 100vh;
+    position: relative;
+    scroll-snap-align: start; /* Alinea el scroll con el inicio de cada sección */
+    flex: 0 0 100%;
 }
 
 section-inicio:nth-child(even) {
     background-color: #051e41;
 }
 
+.car-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 10px;
+    font-size: 50px;
+    background-color: var(--bg-dark);
+    color: var(--bg-light);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 200;
+}
+
+.prev {
+    left: 10px; /* Botón anterior a la izquierda */
+}
+
+.next {
+    right: 10px; /* Botón siguiente a la derecha */
+}
+
+/* Oculta el botón "prev" en la primera sección y "next" en la última */
+.section-inicio:first-child .prev,
+.section-inicio:last-child .next {
+    display: none;
+}
 a.container {
     position: relative;
     display: block;
@@ -245,7 +277,7 @@ a.container:after {
 }
 
 a.container:hover {
-    box-shadow: 4px 4px 6px 4px #1b99bf;
+    box-shadow: 4px 5px 8px 0px var(--bg-dark);
 }
 
 a.container:hover > img {
@@ -279,6 +311,31 @@ a.container:hover > img {
     height: 60px;
     left: 10px;
     font-size: large;
+}
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    margin-top: 20px;
+    position: sticky;
+    gap: 15px;
+    right: 47%;
+    bottom: 50px;
+}
+
+.carousel-indicators .dot {
+    width: 15px;
+    height: 15px;
+    background-color: var(--bg-dark);
+    border-radius: 50%;
+    opacity: .35;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-indicators .dot.active {
+    opacity: 1;
 }
 
 footer {
@@ -511,7 +568,7 @@ footer img {
 
 .fotos-album img:hover {
     scale: 1.1;
-    box-shadow: 1px 1px 10px 1px var(--bg-dark);
+    box-shadow: 2px 2px 10px 1px var(--bg-dark);
 }
 
 .expand-image {
@@ -711,7 +768,7 @@ footer img {
 
     nav.show {
         display: block;
-        z-index: 100;
+        z-index: 1000;
         padding-top: 24px;
         width: 100vw;
         height: 100vh;
@@ -744,7 +801,7 @@ footer img {
         flex-direction: column;
         /* padding: revert; */
         width: revert;
-        height: revert;
+        height: 350px;
         margin-block: 24px;
     }
 
@@ -754,6 +811,15 @@ footer img {
 
     .section-inicio p {
         font-size: medium;
+    }
+
+    .car-btn {
+        display: none;
+    }
+
+    .carousel-indicators {
+        right: 45%;
+        bottom: 35px;
     }
 
     .marquee span {

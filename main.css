@@ -588,6 +588,16 @@ footer img {
     max-height: 90vh;
 }
 
+.next-image {
+    right: -50px;
+    font-size: 35px;
+}
+
+.prev-image {
+    left: -50px;
+    font-size: 35px;
+}
+
 .close-expand{
     font-weight: 900;
     position: absolute;

@@ -62,7 +62,7 @@ body {
     flex-direction: column;
     max-width: 1920px;
     margin: auto;
-    line-height: 1.25;
+    line-height: 1.4;
 }
 
 header {
@@ -191,30 +191,6 @@ main {
     position: relative;
 }
 
-/**  Banner **/
-.banner {
-    width: 100%;
-    overflow: hidden;
-    background-color: #ffffff;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.marquee {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.marquee span {
-    color: #0e2c3e;
-    font-size: 24px;
-    font-weight: bold;
-}
-
 .section-inicio {
     padding: 2%;
     width: 100%;
@@ -222,10 +198,6 @@ main {
     position: relative;
     scroll-snap-align: start; /* Alinea el scroll con el inicio de cada sección */
     flex: 0 0 100%;
-}
-
-section-inicio:nth-child(even) {
-    background-color: #051e41;
 }
 
 .car-btn {
@@ -250,11 +222,6 @@ section-inicio:nth-child(even) {
     right: 10px; /* Botón siguiente a la derecha */
 }
 
-/* Oculta el botón "prev" en la primera sección y "next" en la última */
-.section-inicio:first-child .prev,
-.section-inicio:last-child .next {
-    display: none;
-}
 a.container {
     position: relative;
     display: block;
@@ -286,7 +253,7 @@ a.container:hover > img {
 
 .section-inicio h2 {
     /* text-decoration: underline; */
-    font-size: 70px;
+    font-size: 84px;
     position: absolute;
     z-index: 10;
     bottom: 70px;
@@ -310,7 +277,7 @@ a.container:hover > img {
     bottom: 2px;
     height: 60px;
     left: 10px;
-    font-size: large;
+    font-size: 20px;
 }
 
 .carousel-indicators {
@@ -477,12 +444,13 @@ footer img {
 }
 
 .selectors {
-    width: 150px;
+    width: 200px;
+    font-size: 20px;
     margin-block: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-right: 10px;
+    gap: 24px;
+    /* margin-right: 10px; */
     position: relative;
 }
 
@@ -533,24 +501,62 @@ footer img {
     flex-direction: column;
     margin-block: 20px;
     padding-inline: 10px;
-    gap: 32px;
+    gap: 46px;
+    font-size: 18px;
 }
 
 .section-secundaria h2 {
     margin-bottom: 10px;
-    margin-top: 30px;
     text-decoration: underline;
+    font-size: xx-large;
 }
 
 .article-secundaria {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
-.text-secundaria p {
+.article-secundaria h3{
+    font-size: x-large;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.article-secundaria img{
+    width: 600px;
+    height: 360px;
+}
+
+.article-secundaria p {
     margin-bottom: 5px;
 }
 
 /* Pagina Fotos */
+.banner {
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.marquee span {
+    color: #0e2c3e;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.album {
+    margin-bottom: 24px;
+}
 
 .fotos-album {
     display: flex;
@@ -713,18 +719,22 @@ footer img {
     display: none;
 }
 
+.info-link {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.info-link:hover {
+    text-decoration: underline;
+}
+
 .button-link {
-    display: inline-block;
-    margin-top: 20px;
-    margin-left: 20px;
-    padding-inline: 18px;
+    padding-block: 2px;
+    padding-inline: 8px;
     background-color: var(--bg-dark);
     color: var(--text-light-color);
-    border: none;
     border-radius: 4px;
-    cursor: pointer;
     text-align: center;
-    width: 60px;
 }
 
 .button-wrapper {
@@ -738,21 +748,10 @@ footer img {
     justify-content: flex-end
 }
 
-.text-secundaria h3{
-    font-size: 22px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.text-secundaria img{
-    width: 300px;
-    height: 200px;
-}
-
 /* Inicio responsive */
 @media (width < 600px) {
     #menu-hamburguesa {
-        display: block;
+        display: flex;
         width: 46px;
         height: 46px;
         position: absolute;
@@ -764,6 +763,8 @@ footer img {
         background-color: var(--bg-light);
         border: 0;
         border-radius: 4px;
+        align-items: center;
+        justify-content: center;
     }
 
     @keyframes show {
@@ -828,8 +829,8 @@ footer img {
     }
 
     .carousel-indicators {
-        right: 45%;
-        bottom: 35px;
+        right: 39%;
+        bottom: 10%;
     }
 
     .marquee span {

@@ -850,3 +850,38 @@ footer img {
     }
 
 }
+
+/** Carrousel de fotos**/
+.expand-image button {
+    background-color: var(--bg-dark);
+    color: var(--text-light-color);
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.expand-image button:hover {
+    background-color: #1e455b;
+}
+
+.expand-image .prev-image {
+    left: 10px;
+}
+
+.expand-image .next-image {
+    right: 10px;
+}
+
+.expand-image .close-expand {
+    top: 10px;
+    right: 10px;
+    transform: none;
+    z-index: 11;
+    font-size: 1.5rem;
+}

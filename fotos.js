@@ -5,6 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
     imagenes.forEach(imagen => {
         imagen.addEventListener('click', () => agrandar(imagen));
     });
+    imagenes.forEach(imagen => {
+        imagen.addEventListener('click', () => agrandar(imagen));
+    });
+
+    function agrandar(imagen) {
+        let currentIndex = imagenes.indexOf(imagen);
 
     function agrandar(imagen) {
         let currentIndex = imagenes.indexOf(imagen);
@@ -25,8 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>`;
 
         document.body.insertAdjacentHTML('beforeend', htmlExpand);
+        document.body.insertAdjacentHTML('beforeend', htmlExpand);
 
         let botonCerrar = document.querySelector('.close-expand');
+        let botonSiguiente = document.querySelector('.next-image');
+        let botonAnterior = document.querySelector('.prev-image');
+        let imagenExpandida = document.querySelector('.expand-image img');
+
+        actualizarVisibilidadFlechas();
+
         let botonSiguiente = document.querySelector('.next-image');
         let botonAnterior = document.querySelector('.prev-image');
         let imagenExpandida = document.querySelector('.expand-image img');
@@ -37,7 +50,11 @@ document.addEventListener('DOMContentLoaded', function () {
         botonSiguiente.addEventListener('click', mostrarSiguiente);
         botonAnterior.addEventListener('click', mostrarAnterior);
         document.addEventListener('keydown', manejarTeclado);
+        botonSiguiente.addEventListener('click', mostrarSiguiente);
+        botonAnterior.addEventListener('click', mostrarAnterior);
+        document.addEventListener('keydown', manejarTeclado);
 
+        function cerrar() {
         function cerrar() {
             document.querySelector('.overlay').remove();
             document.removeEventListener('keydown', manejarTeclado); // Elimina el listener para evitar fugas de memoria

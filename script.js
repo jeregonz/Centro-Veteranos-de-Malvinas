@@ -150,3 +150,68 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 });
+
+function showPopup() {
+    const popupHtml = `
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <h2>Sumá tu foto</h2>
+                <form>
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="description">Descripción (hasta 250 caracteres)</label>
+                    <textarea id="description" name="description" maxlength="250"></textarea>
+
+                    <label for="file">Seleccionar archivo</label>
+                    <input type="file" id="file" name="file" accept=".png, .jpg, .jpeg, .gif">
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    `;
+    document.body.innerHTML += popupHtml;
+}
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.parentNode.removeChild(popup); }
+
+showPopup();
+
+function showPopup() {
+    const popupHtml = `
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2>Sumá tu foto</h2>
+                <form>
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="description">Descripción (hasta 250 caracteres)</label>
+                    <textarea id="description" name="description" maxlength="250"></textarea>
+
+                    <label for="file">Seleccionar archivo</label>
+                    <input type="file" id="file" name="file" accept=".png, .jpg, .jpeg, .gif">
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    `;
+    document.body.innerHTML += popupHtml;
+}
+
+function closePopup() {
+    const popup = document.getElementById('popup');
+    popup.parentNode.removeChild(popup);
+}
+
+showPopup();

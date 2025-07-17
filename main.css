@@ -74,7 +74,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 12px;
 }
 
 header h1 {
@@ -751,11 +751,11 @@ footer img {
 @media (width < 600px) {
     #menu-hamburguesa {
         display: flex;
-        width: 46px;
-        height: 46px;
+        width: 56px;
+        height: 56px;
         position: absolute;
-        right: 20px;
-        top: 80px;
+        right: 12px;
+        top: 12px;
         font-size: 40px;
         text-align: center;
         color: var(--bg-dark);

@@ -5,40 +5,29 @@ document.addEventListener('DOMContentLoaded', function () {
     imagenes.forEach(imagen => {
         imagen.addEventListener('click', () => agrandar(imagen));
     });
-    imagenes.forEach(imagen => {
-        imagen.addEventListener('click', () => agrandar(imagen));
-    });
 
     function agrandar(imagen) {
         let currentIndex = imagenes.indexOf(imagen);
 
-    function agrandar(imagen) {
-        let currentIndex = imagenes.indexOf(imagen);
-
-        let htmlExpand = `<div class="overlay">
-            <div class="expand-image">
-                <button class="close-expand">
-                    <i class="fa-solid fa-x"></i>
-                </button>
-                <button class="prev-image car-btn">
-                    <i class="fa-solid fa-left-long"></i>
-                </button>
-                <img src="${imagen.src}" alt="">
-                <button class="next-image car-btn">
-                    <i class="fa-solid fa-right-long"></i>
-                </button>
-            </div>
+        let htmlExpand = 
+            `<div class="overlay">
+                <div class="expand-image">
+                    <button class="close-expand">
+                        <i class="fa-solid fa-x"></i>
+                    </button>
+                    <button class="prev-image car-btn">
+                        <i class="fa-solid fa-left-long"></i>
+                    </button>
+                    <img src="${imagen.src}" alt="">
+                    <button class="next-image car-btn">
+                        <i class="fa-solid fa-right-long"></i>
+                    </button>
+                </div>
             </div>`;
 
         document.body.insertAdjacentHTML('beforeend', htmlExpand);
-        document.body.insertAdjacentHTML('beforeend', htmlExpand);
 
         let botonCerrar = document.querySelector('.close-expand');
-        let botonSiguiente = document.querySelector('.next-image');
-        let botonAnterior = document.querySelector('.prev-image');
-        let imagenExpandida = document.querySelector('.expand-image img');
-
-        actualizarVisibilidadFlechas();
 
         let botonSiguiente = document.querySelector('.next-image');
         let botonAnterior = document.querySelector('.prev-image');
@@ -50,11 +39,13 @@ document.addEventListener('DOMContentLoaded', function () {
         botonSiguiente.addEventListener('click', mostrarSiguiente);
         botonAnterior.addEventListener('click', mostrarAnterior);
         document.addEventListener('keydown', manejarTeclado);
-        botonSiguiente.addEventListener('click', mostrarSiguiente);
-        botonAnterior.addEventListener('click', mostrarAnterior);
-        document.addEventListener('keydown', manejarTeclado);
 
-        function cerrar() {
+        document.addEventListener('click', (e) => {
+            if(e.target.classList.contains('overlay')) {
+                cerrar();
+            }
+        })
+
         function cerrar() {
             document.querySelector('.overlay').remove();
             document.removeEventListener('keydown', manejarTeclado); // Elimina el listener para evitar fugas de memoria

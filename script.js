@@ -17,5 +17,26 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         };
     }
+
+    let botonMenu = document.getElementById('menu-hamburguesa')
+    let navBar = document.querySelector('.navbar')
+
+    if (botonMenu != null){
+        botonMenu.addEventListener("click", toggleMenu)
+
+        function toggleMenu() {
+            navBar.classList.toggle("show");
+        }
+    }
+
+    let mostrarAtajos = document.querySelector('.mostrar-atajos');
+
+    if (mostrarAtajos != null) {
+        mostrarAtajos.addEventListener('click', () => {
+            let selectors = document.querySelector('.selectors');
+            selectors.classList.toggle('show');
+            mostrarAtajos.querySelector('i').style.transform = selectors.classList.contains('show') ? 'rotate(270deg)' : 'rotate(90deg)';
+        })
+    }
     
 });

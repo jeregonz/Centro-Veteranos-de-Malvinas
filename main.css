@@ -38,7 +38,7 @@ img,
 video,
 svg {
     height: auto;
-    max-width: 100%;
+    max-width: 100vw;
     object-fit: cover;
 }
 
@@ -47,6 +47,7 @@ svg {
     --bg-dark: #0e2c3e;
     --text-color: #0e2c3e;
     --text-light-color: #eefbfd;
+    --back-text: #0e2c3e34;
 }
 
 html {
@@ -717,7 +718,7 @@ footer img {
 }
 
 /* Inicio responsive */
-@media (width < 600px) {
+@media (width < 768px) {
     header {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./img/portada_malvinas.png) center;
         background-size: cover;
@@ -792,22 +793,29 @@ footer img {
     }
 
     .selectors.show {
-        display:flex;
+        display: flex;
         width: 80%;
         font-size: 20px;
         padding-block: 20px;
         flex-direction: column;
         gap: 24px;
         align-items: center;
-        background-color: var(--bg-dark);
-        color: var(--bg-light);
-        max-height: 200px;
+        background-color: var(--back-text);
+        color: var(--text-color);
+        height: 200px;
+        max-height: fit-content;
         overflow: scroll;
-        margin-block: 0;
+        pointer-events: all;
+        opacity: 1;
+        transition: height .3s;
     }
 
     .selectors {
-        display: none;
+        height: 0;
+        opacity: 0;
+        margin: 0;
+        pointer-events: none;
+        transition: height .3s;
     }
 
     .selectors:after {
@@ -821,7 +829,7 @@ footer img {
     }
 
     .section-secundaria {
-        width: 85%;
+        width: 90%;
         padding-inline: 0;
     }
 
@@ -855,6 +863,12 @@ footer img {
         border: 1px solid var(--bg-light);
     }
 
+    .fotos-album {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
     footer {
         padding: 20px;
         gap: 16px;
@@ -868,6 +882,14 @@ footer img {
         place-items: center;
     }
 
+}
+
+@media (width < 400px) {
+    .fotos-album {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
 }
 
 /** Carrousel de fotos**/
